@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AZEEN — Handmade Elegance</title>
+<meta name="description" content="AZEEN — premium handmade jewelry, bracelets and gift collections.">
+<style>
+:root{
+  --cream:#f8f1e8; --ivory:#fffdf9; --gold:#b88635; --gold2:#d8b16a;
+  --ink:#171513; --muted:#746d64; --line:#e7ddd0; --green:#287c45;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--ivory);color:var(--ink)}
+button,input,select,textarea{font:inherit} button{cursor:pointer}
+.topbar{height:38px;background:#f5eadc;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:35px;font-size:12px;color:#4c443b}
+.header{background:#fffdf9;padding:16px 5% 10px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.headrow{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+.logo{text-align:center;font-family:Georgia,serif;font-size:46px;letter-spacing:7px;font-weight:500;line-height:1;color:#171513;position:relative}
+.logo span{color:var(--gold)}
+.logo small{display:block;font-family:Arial;font-size:9px;letter-spacing:6px;margin-top:9px;color:#7c6750}
+.logo .heart{position:absolute;font-family:Georgia;color:#c9914c;font-size:25px;right:-4px;top:-15px;transform:rotate(-16deg)}
+.tools{display:flex;align-items:center;gap:12px}.tools.left{justify-content:flex-start}.tools.right{justify-content:flex-end}
+.search{display:flex;border:1px solid var(--line);background:white;height:39px}.search input{border:0;outline:0;padding:0 12px;width:210px}.search button{border:0;background:white;padding:0 12px}
+.iconbtn{background:none;border:0;color:#2d2823;font-size:13px;padding:8px}.badge{background:var(--gold);color:white;border-radius:50%;font-size:9px;padding:3px 5px;vertical-align:top}
+.nav{display:flex;justify-content:center;gap:35px;padding-top:17px}.nav button{border:0;background:none;font-size:13px;letter-spacing:.5px}.nav button:hover{color:var(--gold)}
+.hero{min-height:520px;background:linear-gradient(90deg,#f7eee3 0%,#f8f0e7 46%,#eee2d5 100%);display:grid;grid-template-columns:1fr 1.05fr;align-items:center;padding:55px 7%;overflow:hidden}
+.hero-copy{max-width:530px}.eyebrow{letter-spacing:4px;font-size:12px;color:#8d6d43}.hero h1{font:500 62px/1.02 Georgia,serif;margin:17px 0}.hero h1 em{color:#b97d49}.hero p{color:#5f584f;line-height:1.8;max-width:470px}.goldbtn{border:0;background:var(--gold);color:#fff;padding:14px 25px;letter-spacing:1px;margin-top:12px}.hero-art{height:370px;border-radius:4px;background:radial-gradient(circle at 50% 40%,#fff8ef 0,#eadbca 58%,#d8c3ac 100%);position:relative;box-shadow:0 25px 60px #8d765025}
+.jewel{position:absolute;border:2px solid #c18a42;box-shadow:0 8px 25px #805d3025}.bracelet{width:190px;height:190px;border-radius:50%;right:14%;top:70px}.bracelet:after{content:"";position:absolute;width:18px;height:18px;background:#e7c27f;border-radius:50%;left:82px;top:84px;box-shadow:28px 0 #d6a75f,-28px 0 #d6a75f,0 28px #d6a75f,0 -28px #d6a75f}
+.necklace{width:120px;height:120px;border-radius:50%;left:18%;bottom:48px;border-color:#a77432}.necklace:after{content:"";position:absolute;width:35px;height:35px;border-radius:50%;border:2px solid #d3a557;left:40px;top:45px;background:#fff8ef}
+.section{padding:60px 6%}.section h2{text-align:center;font:500 34px Georgia,serif;margin:0}.subtitle{text-align:center;color:var(--muted);margin:10px 0 35px}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.cat{border:1px solid var(--line);background:white;padding:10px;text-align:center;transition:.2s}.cat:hover{transform:translateY(-3px);box-shadow:0 12px 25px #6c4d2814}.catpic{height:150px;background:linear-gradient(135deg,#fbf3e9,#ead9c6);display:flex;align-items:center;justify-content:center;font:34px Georgia;color:#b4864a}.cat b{display:block;margin:14px 0 8px;font-size:13px}.cat button{border:0;background:none;color:var(--gold);font-size:11px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;margin-top:45px}.feature{text-align:center;border-right:1px solid var(--line);padding:0 15px}.feature:last-child{border:0}.feature strong{display:block;font:17px Georgia;margin-bottom:6px}.feature span{font-size:12px;color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product{background:white;border:1px solid var(--line);position:relative}.product-img{height:260px;background:linear-gradient(135deg,#fbf4eb,#eadaca);display:flex;align-items:center;justify-content:center;font-size:62px;color:#bd8a45}.product-info{padding:16px}.product h3{font:20px Georgia;margin:0 0 7px}.price{color:#9a6d31;font-weight:bold}.add{width:100%;margin-top:12px;padding:11px;border:1px solid var(--gold);background:white;color:#8d642e}.add:hover{background:var(--gold);color:white}
+.footer{background:#1c1916;color:#eee7df;padding:55px 7% 25px}.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}.footer h3{font:22px Georgia;margin-top:0}.footer p,.footer li{color:#bdb5ab;font-size:13px;line-height:1.8}.footer ul{list-style:none;padding:0}.copyright{text-align:center;border-top:1px solid #403a34;margin-top:35px;padding-top:20px;color:#8f877d;font-size:11px}
+.whatsapp{position:fixed;right:20px;bottom:20px;background:#2aa85b;color:white;border-radius:30px;padding:12px 18px;z-index:40;box-shadow:0 8px 25px #0002;text-decoration:none;font-size:13px}
+
+.overlay{display:none;position:fixed;inset:0;background:#0007;z-index:100}.overlay.show{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(480px,100%);background:#fffdf9;padding:25px;overflow:auto}.close{float:right;border:0;background:none;font-size:25px}.drawer h2{font:28px Georgia;margin-top:40px}.cartitem{display:grid;grid-template-columns:70px 1fr auto;gap:12px;border-bottom:1px solid var(--line);padding:14px 0}.thumb{background:#f2e6d8;display:flex;align-items:center;justify-content:center;font-size:27px;height:70px}.qty button{border:1px solid var(--line);background:white;width:26px;height:26px}.checkout{width:100%;padding:14px;background:var(--gold);color:white;border:0;margin-top:15px}
+
+.admin{display:none;min-height:100vh;background:#f5efe7}.admin.show{display:block}.adminbar{height:68px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 30px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.adminbrand{font:26px Georgia}.adminwrap{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 68px)}.sidebar{background:#201c18;color:white;padding:25px 14px}.sidebar button{display:block;width:100%;text-align:left;background:none;border:0;color:#d8d0c7;padding:13px 12px;border-radius:4px}.sidebar button.active,.sidebar button:hover{background:#38312a;color:#e4bb77}.adminmain{padding:30px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.stat{background:#fff;padding:20px;border:1px solid var(--line)}.stat small{color:var(--muted)}.stat strong{display:block;font:28px Georgia;margin-top:8px}.panel{background:white;border:1px solid var(--line);padding:22px;margin-top:22px}.panel h2{font:22px Georgia;margin-top:0}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:12px;border-bottom:1px solid var(--line);text-align:left}.adminbtn{border:1px solid var(--gold);background:white;padding:8px 12px}.adminbtn.gold{background:var(--gold);color:white}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-size:12px;margin-bottom:5px;color:#665e55}.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid var(--line);outline:0;background:#fff}.field.full{grid-column:1/-1}.login{position:fixed;inset:0;background:#f8f1e8;display:flex;align-items:center;justify-content:center;z-index:200}.login.hide{display:none}.loginbox{width:min(400px,90%);background:white;padding:35px;border:1px solid var(--line);box-shadow:0 25px 60px #5b43221a}.loginbox h1{font:40px Georgia;text-align:center;margin:0}.loginbox p{text-align:center;color:var(--muted);font-size:12px}.loginbox input{width:100%;padding:13px;margin:7px 0;border:1px solid var(--line)}.loginbox button{width:100%;padding:13px;margin-top:8px;border:0;background:var(--gold);color:white}
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);background:#211d19;color:white;padding:12px 20px;display:none;z-index:300}.toast.show{display:block}
+@media(max-width:900px){.headrow{grid-template-columns:1fr}.tools.left,.tools.right{justify-content:center}.logo{order:-1}.nav{overflow:auto;justify-content:flex-start}.hero{grid-template-columns:1fr}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr);gap:20px}.feature:nth-child(2){border:0}.footergrid{grid-template-columns:1fr 1fr}.adminwrap{grid-template-columns:1fr}.sidebar{display:flex;overflow:auto}.sidebar button{min-width:140px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.topbar{font-size:10px;gap:10px}.search input{width:150px}.hero{padding:40px 6%}.hero h1{font-size:45px}.categories{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:1fr}.features{grid-template-columns:1fr}.feature{border:0}.footergrid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.adminmain{padding:15px}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="shopView">
+  <div class="topbar"><span>WhatsApp: 0315 7659144</span><span>Free Delivery on Orders Above PKR 5000</span><span>Pakistan • PKR</span></div>
+  <header class="header">
+    <div class="headrow">
+      <div class="tools left">
+        <div class="search"><input id="searchInput" placeholder="Search for jewelry..."><button onclick="searchProducts()">⌕</button></div>
+      </div>
+      <div class="logo">A<span>Z</span>EEN<i class="heart">♡</i><small>HANDMADE WITH LOVE</small></div>
+      <div class="tools right">
+        <button class="iconbtn" onclick="openAdmin()">Admin</button>
+        <button class="iconbtn" onclick="openCart()">Cart <span class="badge" id="cartCount">0</span></button>
+      </div>
+    </div>
+    <nav class="nav">
+      <button onclick="goHome()">HOME</button><button onclick="filterCat('All')">SHOP</button>
+      <button onclick="filterCat('Bracelets')">BRACELETS</button><button onclick="filterCat('Necklaces')">NECKLACES</button>
+      <button onclick="filterCat('Earrings')">EARRINGS</button><button onclick="filterCat('Rings')">RINGS</button>
+      <button onclick="filterCat('Gift Boxes')">GIFT BOXES</button><button onclick="scrollToId('about')">ABOUT US</button><button onclick="scrollToId('contact')">CONTACT</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow">HANDMADE ELEGANCE</div>
+      <h1>Made with love,<br><em>made for you.</em> ♡</h1>
+      <p>Discover AZEEN's elegant collection of handmade jewelry, bracelets and thoughtful gift pieces — created to make every moment feel special.</p>
+      <button class="goldbtn" onclick="scrollToId('shop')">SHOP COLLECTION →</button>
+    </div>
+    <div class="hero-art"><div class="jewel bracelet"></div><div class="jewel necklace"></div></div>
+  </section>
+
+  <section class="section">
+    <h2>Shop by Category</h2><div class="subtitle">Timeless pieces, thoughtfully made.</div>
+    <div class="categories">
+      <div class="cat"><div class="catpic">♡</div><b>BRACELETS</b><button onclick="filterCat('Bracelets')">SHOP NOW →</button></div>
+      <div class="cat"><div class="catpic">◊</div><b>NECKLACES</b><button onclick="filterCat('Necklaces')">SHOP NOW →</button></div>
+      <div class="cat"><div class="catpic">✦</div><b>EARRINGS</b><button onclick="filterCat('Earrings')">SHOP NOW →</button></div>
+      <div class="cat"><div class="catpic">○</div><b>RINGS</b><button onclick="filterCat('Rings')">SHOP NOW →</button></div>
+      <div class="cat"><div class="catpic">🎁</div><b>GIFT BOXES</b><button onclick="filterCat('Gift Boxes')">SHOP NOW →</button></div>
+      <div class="cat"><div class="catpic">NEW</div><b>NEW ARRIVALS</b><button onclick="filterCat('All')">SHOP NOW →</button></div>
+    </div>
+    <div class="features">
+      <div class="feature"><strong>Premium Quality</strong><span>Carefully selected materials</span></div>
+      <div class="feature"><strong>Handmade With Love</strong><span>Every piece is uniquely made</span></div>
+      <div class="feature"><strong>Secure Shopping</strong><span>Safe and trusted checkout</span></div>
+      <div class="feature"><strong>Customer Support</strong><span>WhatsApp: 0315 7659144</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="shop" style="padding-top:15px">
+    <h2 id="productHeading">New Arrivals</h2><div class="subtitle">Explore the latest AZEEN collection.</div>
+    <div class="products" id="products"></div>
+  </section>
+
+  <section class="section" id="about" style="background:var(--cream)">
+    <h2>About AZEEN</h2><div class="subtitle">A small idea, made into something meaningful.</div>
+    <div style="max-width:800px;margin:auto;text-align:center;line-height:1.9;color:#615950">
+      AZEEN is a premium handmade brand created around thoughtful design, personal touches and pieces made to be remembered. Every collection is presented with an emphasis on elegance, care and simplicity.
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2><div class="subtitle">We would love to hear from you.</div>
+    <div style="max-width:650px;margin:auto" class="panel">
+      <div class="formgrid">
+        <div class="field"><label>Name</label><input id="contactName"></div>
+        <div class="field"><label>Phone / Email</label><input id="contactContact"></div>
+        <div class="field full"><label>Message</label><textarea id="contactMsg" rows="5"></textarea></div>
+      </div>
+      <button class="goldbtn" onclick="sendContact()">SEND MESSAGE</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footergrid">
+      <div><h3>AZEEN</h3><p>Handmade elegance, thoughtfully created for you.</p></div>
+      <div><h3>Shop</h3><ul><li>Bracelets</li><li>Necklaces</li><li>Earrings</li><li>Rings</li></ul></div>
+      <div><h3>Help</h3><ul><li>Shipping</li><li>Returns</li><li>Privacy</li><li>Terms</li></ul></div>
+      <div><h3>Contact</h3><p>WhatsApp<br>0315 7659144</p><p>Pakistan</p></div>
+    </div>
+    <div class="copyright">© 2026 AZEEN. All rights reserved.</div>
+  </footer>
+  <a class="whatsapp" href="https://wa.me/923157659144" target="_blank">WhatsApp • 0315 7659144</a>
+</div>
+
+<div class="overlay" id="cartOverlay" onclick="if(event.target.id==='cartOverlay')closeCart()">
+  <div class="drawer"><button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><div id="cartTotal" style="font-weight:bold;font-size:18px;margin-top:18px"></div><button class="checkout" onclick="openCheckout()">PROCEED TO CHECKOUT</button></div>
+</div>
+
+<div class="overlay" id="checkoutOverlay" onclick="if(event.target.id==='checkoutOverlay')closeCheckout()">
+  <div class="drawer"><button class="close" onclick="closeCheckout()">×</button><h2>Checkout</h2>
+    <div class="formgrid">
+      <div class="field full"><label>Full Name</label><input id="coName"></div>
+      <div class="field"><label>Phone</label><input id="coPhone"></div>
+      <div class="field"><label>City</label><input id="coCity"></div>
+      <div class="field full"><label>Delivery Address</label><textarea id="coAddress" rows="3"></textarea></div>
+      <div class="field full"><label>Payment Method</label><select id="coPayment"><option>Cash on Delivery</option><option>JazzCash</option><option>Easypaisa</option><option>Bank Transfer</option><option>Card Payment (Coming Soon)</option></select></div>
+    </div>
+    <button class="checkout" onclick="placeOrder()">PLACE ORDER</button>
+  </div>
+</div>
+
+<div class="login hide" id="login">
+  <div class="loginbox">
+    <h1>AZEEN</h1><p>Administrator Login</p>
+    <input id="adminUser" placeholder="Username" value="admin">
+    <input id="adminPass" placeholder="Password" type="password">
+    <button onclick="loginAdmin()">LOGIN</button>
+    <button onclick="closeAdmin()" style="background:white;color:#8b642e;border:1px solid #d9b77d">BACK TO STORE</button>
+    <small style="display:block;margin-top:15px;text-align:center;color:#9b9187">Demo credentials: admin / azeen123</small>
+  </div>
+</div>
+
+<div class="admin" id="adminView">
+  <div class="adminbar"><div class="adminbrand">AZEEN <small style="font:11px Arial;color:#9b7a4b">ADMIN</small></div><button class="adminbtn" onclick="logoutAdmin()">Logout</button></div>
+  <div class="adminwrap">
+    <aside class="sidebar">
+      <button class="active" onclick="adminTab('dashboard',this)">Dashboard</button>
+      <button onclick="adminTab('productsAdmin',this)">Products</button>
+      <button onclick="adminTab('ordersAdmin',this)">Orders</button>
+      <button onclick="adminTab('customersAdmin',this)">Customers</button>
+      <button onclick="adminTab('messagesAdmin',this)">Messages</button>
+      <button onclick="adminTab('settingsAdmin',this)">Settings</button>
+    </aside>
+    <main class="adminmain">
+      <div id="dashboard" class="adminTab">
+        <h1 style="font:34px Georgia">Dashboard</h1>
+        <div class="stats">
+          <div class="stat"><small>Total Products</small><strong id="statProducts">0</strong></div>
+          <div class="stat"><small>Total Orders</small><strong id="statOrders">0</strong></div>
+          <div class="stat"><small>Customers</small><strong id="statCustomers">0</strong></div>
+          <div class="stat"><small>Total Sales</small><strong id="statSales">PKR 0</strong></div>
+        </div>
+        <div class="panel"><h2>Recent Orders</h2><div id="recentOrders"></div></div>
+      </div>
+      <div id="productsAdmin" class="adminTab" style="display:none">
+        <h1 style="font:34px Georgia">Products</h1>
+        <div class="panel">
+          <h2>Add Product</h2>
+          <div class="formgrid">
+            <div class="field"><label>Product Name</label><input id="pName"></div>
+            <div class="field"><label>Category</label><select id="pCat"><option>Bracelets</option><option>Necklaces</option><option>Earrings</option><option>Rings</option><option>Gift Boxes</option></select></div>
+            <div class="field"><label>Price (PKR)</label><input id="pPrice" type="number"></div>
+            <div class="field"><label>Stock</label><input id="pStock" type="number" value="10"></div>
+            <div class="field full"><label>Description</label><textarea id="pDesc" rows="3"></textarea></div>
+          </div>
+          <button class="adminbtn gold" style="margin-top:14px" onclick="addProduct()">ADD PRODUCT</button>
+        </div>
+        <div class="panel"><h2>Product List</h2><div id="adminProducts"></div></div>
+      </div>
+      <div id="ordersAdmin" class="adminTab" style="display:none"><h1 style="font:34px Georgia">Orders</h1><div class="panel"><div id="adminOrders"></div></div></div>
+      <div id="customersAdmin" class="adminTab" style="display:none"><h1 style="font:34px Georgia">Customers</h1><div class="panel"><div id="adminCustomers"></div></div></div>
+      <div id="messagesAdmin" class="adminTab" style="display:none"><h1 style="font:34px Georgia">Contact Messages</h1><div class="panel"><div id="adminMessages"></div></div></div>
+      <div id="settingsAdmin" class="adminTab" style="display:none"><h1 style="font:34px Georgia">Settings</h1><div class="panel"><h2>Store Settings</h2><div class="formgrid"><div class="field"><label>WhatsApp</label><input value="0315 7659144"></div><div class="field"><label>Currency</label><input value="PKR" disabled></div><div class="field"><label>Country</label><input value="Pakistan" disabled></div></div></div></div>
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY='AZEEN_DATA_V1';
+const defaultProducts=[
+ {id:1,name:'Pearl Heart Bracelet',cat:'Bracelets',price:2490,stock:12,icon:'♡',desc:'Elegant pearl bracelet with a delicate heart detail.'},
+ {id:2,name:'Golden Bloom Necklace',cat:'Necklaces',price:3990,stock:8,icon:'◊',desc:'A refined handmade necklace for everyday elegance.'},
+ {id:3,name:'Pearl Drop Earrings',cat:'Earrings',price:2990,stock:10,icon:'✦',desc:'Classic pearl drops with a graceful finish.'},
+ {id:4,name:'Signature Love Rings',cat:'Rings',price:3490,stock:7,icon:'○',desc:'A timeless pair inspired by simple, meaningful moments.'},
+ {id:5,name:'AZEEN Gift Box',cat:'Gift Boxes',price:4990,stock:6,icon:'🎁',desc:'A premium gift presentation for someone special.'},
+ {id:6,name:'Classic Gold Bracelet',cat:'Bracelets',price:2790,stock:9,icon:'♡',desc:'Minimal handmade bracelet with warm golden accents.'},
+ {id:7,name:'Rose Charm Necklace',cat:'Necklaces',price:4290,stock:5,icon:'◊',desc:'Delicate charm necklace with a romantic silhouette.'},
+ {id:8,name:'Golden Pearl Ring',cat:'Rings',price:3190,stock:11,icon:'○',desc:'Elegant handmade ring designed for effortless style.'}
+];
+function loadData(){let d=localStorage.getItem(KEY);if(!d){d={products:defaultProducts,orders:[],messages:[],customers:[]};localStorage.setItem(KEY,JSON.stringify(d))}return d}
+function saveData(d){localStorage.setItem(KEY,JSON.stringify(d))}
+let data=loadData(),cart=JSON.parse(localStorage.getItem('AZEEN_CART')||'[]');
+const money=n=>'PKR '+Number(n).toLocaleString('en-PK');
+function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2200)}
+function renderProducts(list=data.products){document.getElementById('products').innerHTML=list.map(p=>`<article class="product"><div class="product-img">${p.icon}</div><div class="product-info"><h3>${p.name}</h3><div class="price">${money(p.price)}</div><div style="font-size:11px;color:#857b70;margin-top:6px">${p.cat} • ${p.stock} available</div><button class="add" onclick="addToCart(${p.id})">ADD TO CART</button></div></article>`).join('')||'<p>No products found.</p>'}
+function filterCat(cat){document.getElementById('productHeading').textContent=cat==='All'?'All Products':cat;document.getElementById('shop').scrollIntoView();renderProducts(cat==='All'?data.products:data.products.filter(p=>p.cat===cat))}
+function searchProducts(){const q=document.getElementById('searchInput').value.toLowerCase();renderProducts(data.products.filter(p=>(p.name+p.cat+p.desc).toLowerCase().includes(q)));document.getElementById('shop').scrollIntoView()}
+function goHome(){scrollToId('home')} function scrollToId(id){document.getElementById(id).scrollIntoView()}
+function addToCart(id){const p=data.products.find(x=>x.id===id);if(!p||p.stock<1)return toast('Product is out of stock');const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});localStorage.setItem('AZEEN_CART',JSON.stringify(cart));updateCart();toast('Added to cart')}
+function updateCart(){document.getElementById('cartCount').textContent=cart.reduce((a,b)=>a+b.qty,0)}
+function openCart(){document.getElementById('cartOverlay').classList.add('show');renderCart()} function closeCart(){document.getElementById('cartOverlay').classList.remove('show')}
+function renderCart(){const el=document.getElementById('cartItems');if(!cart.length){el.innerHTML='<p>Your cart is empty.</p>';document.getElementById('cartTotal').textContent='';return}let total=0;el.innerHTML=cart.map(i=>{const p=data.products.find(x=>x.id===i.id);if(!p)return '';total+=p.price*i.qty;return `<div class="cartitem"><div class="thumb">${p.icon}</div><div><b>${p.name}</b><div>${money(p.price)}</div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button> ${i.qty} <button onclick="changeQty(${p.id},1)">+</button></div></div><button class="iconbtn" onclick="removeCart(${p.id})">×</button></div>`}).join('');document.getElementById('cartTotal').textContent='Total: '+money(total)}
+function changeQty(id,n){const i=cart.find(x=>x.id===id);if(!i)return;i.qty+=n;if(i.qty<=0)cart=cart.filter(x=>x.id!==id);localStorage.setItem('AZEEN_CART',JSON.stringify(cart));updateCart();renderCart()}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);localStorage.setItem('AZEEN_CART',JSON.stringify(cart));updateCart();renderCart()}
+function openCheckout(){if(!cart.length)return toast('Your cart is empty');closeCart();document.getElementById('checkoutOverlay').classList.add('show')}
+function closeCheckout(){document.getElementById('checkoutOverlay').classList.remove('show')}
+function placeOrder(){const name=document.getElementById('coName').value.trim(),phone=document.getElementById('coPhone').value.trim(),city=document.getElementById('coCity').value.trim(),address=document.getElementById('coAddress').value.trim(),payment=document.getElementById('coPayment').value;if(!name||!phone||!city||!address)return toast('Please complete all required fields');let total=0,items=[];cart.forEach(i=>{const p=data.products.find(x=>x.id===i.id);if(p){total+=p.price*i.qty;items.push({id:p.id,name:p.name,qty:i.qty,price:p.price});p.stock=Math.max(0,p.stock-i.qty)}});const order={id:'AZ'+Date.now().toString().slice(-7),date:new Date().toLocaleString(),customer:name,phone,city,address,payment,items,total,status:'Pending'};data.orders.unshift(order);if(!data.customers.some(c=>c.phone===phone))data.customers.push({name,phone,city});saveData(data);cart=[];localStorage.setItem('AZEEN_CART','[]');updateCart();closeCheckout();toast('Order placed successfully • '+order.id);renderProducts()}
+function sendContact(){const n=document.getElementById('contactName').value.trim(),c=document.getElementById('contactContact').value.trim(),m=document.getElementById('contactMsg').value.trim();if(!n||!c||!m)return toast('Please complete the form');data.messages.unshift({date:new Date().toLocaleString(),name:n,contact:c,message:m});saveData(data);toast('Message sent successfully');document.getElementById('contactName').value='';document.getElementById('contactContact').value='';document.getElementById('contactMsg').value=''}
+function openAdmin(){document.getElementById('login').classList.remove('hide')}
+function closeAdmin(){document.getElementById('login').classList.add('hide')}
+function loginAdmin(){if(document.getElementById('adminUser').value==='admin'&&document.getElementById('adminPass').value==='azeen123'){closeAdmin();document.getElementById('shopView').style.display='none';document.getElementById('adminView').classList.add('show');refreshAdmin()}else toast('Invalid login')}
+function logoutAdmin(){document.getElementById('adminView').classList.remove('show');document.getElementById('shopView').style.display='block'}
+function adminTab(id,btn){document.querySelectorAll('.adminTab').forEach(x=>x.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.sidebar button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');refreshAdmin()}
+function refreshAdmin(){data=loadData();document.getElementById('statProducts').textContent=data.products.length;document.getElementById('statOrders').textContent=data.orders.length;document.getElementById('statCustomers').textContent=data.customers.length;document.getElementById('statSales').textContent=money(data.orders.reduce((a,o)=>a+o.total,0));document.getElementById('recentOrders').innerHTML=orderTable(data.orders.slice(0,8));document.getElementById('adminProducts').innerHTML=productTable();document.getElementById('adminOrders').innerHTML=orderTable(data.orders);document.getElementById('adminCustomers').innerHTML=customerTable();document.getElementById('adminMessages').innerHTML=messageTable()}
+function productTable(){if(!data.products.length)return 'No products.';return `<table class="table"><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Action</th></tr>${data.products.map(p=>`<tr><td>${p.name}</td><td>${p.cat}</td><td>${money(p.price)}</td><td>${p.stock}</td><td><button class="adminbtn" onclick="deleteProduct(${p.id})">Delete</button></td></tr>`).join('')}</table>`}
+function orderTable(arr){if(!arr.length)return 'No orders yet.';return `<table class="table"><tr><th>ID</th><th>Customer</th><th>Total</th><th>Payment</th><th>Status</th></tr>${arr.map(o=>`<tr><td>${o.id}</td><td>${o.customer}<br><small>${o.phone}</small></td><td>${money(o.total)}</td><td>${o.payment}</td><td><select onchange="setOrderStatus('${o.id}',this.value)"><option ${o.status==='Pending'?'selected':''}>Pending</option><option ${o.status==='Processing'?'selected':''}>Processing</option><option ${o.status==='Packed'?'selected':''}>Packed</option><option ${o.status==='Shipped'?'selected':''}>Shipped</option><option ${o.status==='Delivered'?'selected':''}>Delivered</option><option ${o.status==='Cancelled'?'selected':''}>Cancelled</option></select></td></tr>`).join('')}</table>`}
+function customerTable(){if(!data.customers.length)return 'No customers yet.';return `<table class="table"><tr><th>Name</th><th>Phone</th><th>City</th></tr>${data.customers.map(c=>`<tr><td>${c.name}</td><td>${c.phone}</td><td>${c.city}</td></tr>`).join('')}</table>`}
+function messageTable(){if(!data.messages.length)return 'No messages yet.';return `<table class="table"><tr><th>Date</th><th>Name</th><th>Contact</th><th>Message</th></tr>${data.messages.map(m=>`<tr><td>${m.date}</td><td>${m.name}</td><td>${m.contact}</td><td>${m.message}</td></tr>`).join('')}</table>`}
+function addProduct(){const name=document.getElementById('pName').value.trim(),cat=document.getElementById('pCat').value,price=Number(document.getElementById('pPrice').value),stock=Number(document.getElementById('pStock').value),desc=document.getElementById('pDesc').value.trim();if(!name||!price)return toast('Product name and price are required');data.products.unshift({id:Date.now(),name,cat,price,stock,desc,icon:cat==='Bracelets'?'♡':cat==='Necklaces'?'◊':cat==='Earrings'?'✦':cat==='Rings'?'○':'🎁'});saveData(data);['pName','pPrice','pDesc'].forEach(id=>document.getElementById(id).value='');document.getElementById('pStock').value=10;refreshAdmin();toast('Product added')}
+function deleteProduct(id){if(!confirm('Delete this product?'))return;data.products=data.products.filter(p=>p.id!==id);saveData(data);refreshAdmin();toast('Product deleted')}
+function setOrderStatus(id,status){const o=data.orders.find(x=>x.id===id);if(o){o.status=status;saveData(data);refreshAdmin();toast('Order updated')}}
+renderProducts();updateCart();
+</script>
+</body>
+</html>
